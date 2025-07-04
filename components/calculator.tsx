@@ -1,4 +1,10 @@
-"use client";
+'use client';
+
+/**
+ * 工作性价比计算器
+ * 版权声明：第一版分叉于 https://github.com/Zippland/worth-calculator
+ * 当前版本由 id8 团队维护和开发
+ */
 
 import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Wallet, Github, FileText, Book, History, Eye , Star} from 'lucide-react'; // 添加新图标
@@ -780,16 +786,16 @@ const SalaryCalculator = () => {
     onChange: (name: string, value: string | boolean) => void;
     options: Array<{ label: string; value: string; }>;
   }) => (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">{label}</label>
-      <div className={`grid ${language === 'en' ? 'grid-cols-3' : 'grid-cols-4'} gap-2`}>
+      <div className={`grid ${language === 'en' ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-2 md:grid-cols-4'} gap-3`}>
         {options.map((option) => (
           <button
             key={option.value}
-            className={`px-3 py-2 rounded-md text-sm transition-colors
+            className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ease-out transform hover:scale-105 active:scale-95 border-2
               ${value === option.value 
-                ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 font-medium' 
-                : 'bg-gray-50 hover:bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-300'}`}
+                ? 'bg-gradient-to-r from-blue-500/90 to-blue-600/90 text-white border-blue-500/80 shadow-lg shadow-blue-500/25 dark:from-blue-600/90 dark:to-blue-700/90 dark:border-blue-600/80' 
+                : 'bg-gray-50/50 hover:bg-white/80 dark:bg-gray-800/50 dark:hover:bg-gray-700/80 text-gray-700 dark:text-gray-300 border-gray-200/60 dark:border-gray-600/60 hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:shadow-md'}`}
             onClick={(e) => {
               e.preventDefault(); // 阻止默认行为
               e.stopPropagation(); // 阻止事件冒泡
@@ -970,16 +976,16 @@ const SalaryCalculator = () => {
   }, []);
 
   return (
-    <div className="max-w-2xl mx-auto p-4 sm:p-6">
+    <div className="max-w-2xl mx-auto p-4 sm:p-6 min-h-screen bg-transparent">
       <div className="mb-4 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 py-2">{t('title')}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 dark:from-blue-400 dark:via-purple-400 dark:to-blue-600 py-2 leading-tight">{t('title')}</h1>
         
         <div className="mb-3">
           <a
             href="https://github.com/Id8fun/Is-_job_reasonable"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1.5"
+            className="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-200 ease-out inline-flex items-center gap-1.5 hover:scale-105 active:scale-95 px-3 py-1.5 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-900/20"
           >
             <Star className="h-3.5 w-3.5" />
             {t('star_request')}
@@ -992,7 +998,7 @@ const SalaryCalculator = () => {
             href="https://github.com/Id8fun/Is-_job_reasonable"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-1"
+            className="text-sm text-gray-500 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-200 ease-out flex items-center gap-1 hover:scale-105 active:scale-95 px-2 py-1 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-900/20"
           >
             <Github className="h-3.5 w-3.5" />
             {t('github')}
@@ -1010,7 +1016,7 @@ const SalaryCalculator = () => {
           {isBrowser && (
             <button
               onClick={() => setShowHistory(!showHistory)}
-              className="text-sm text-gray-500 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer"
+              className="text-sm text-gray-500 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-all duration-200 ease-out flex items-center gap-1 cursor-pointer hover:scale-105 active:scale-95 px-2 py-1 rounded-lg hover:bg-blue-50/50 dark:hover:bg-blue-900/20"
             >
               <History className="h-3.5 w-3.5" />
               {t('history')}
@@ -1032,7 +1038,7 @@ const SalaryCalculator = () => {
                     {history.length > 0 && (
                       <button 
                         onClick={clearAllHistory}
-                        className="text-xs text-gray-500 hover:text-red-500 dark:hover:text-red-400 transition-colors px-2 py-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+                        className="text-xs text-gray-500 hover:text-red-500 dark:hover:text-red-400 transition-all duration-200 ease-out px-3 py-1.5 rounded-lg hover:bg-red-50/80 dark:hover:bg-red-900/20 hover:scale-105 active:scale-95"
                       >
                         {t('clear_all')}
                       </button>
@@ -1042,7 +1048,7 @@ const SalaryCalculator = () => {
                         e.stopPropagation(); // 阻止事件冒泡
                         setShowHistory(false);
                       }}
-                      className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 w-6 h-6 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100/80 dark:hover:bg-gray-700/80 transition-all duration-200 ease-out hover:scale-110 active:scale-95"
                     >
                       ×
                     </button>
@@ -1106,7 +1112,7 @@ const SalaryCalculator = () => {
                               // 关闭历史记录面板
                               setShowHistory(false);
                             }}
-                            className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                            className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-2 hover:bg-blue-50/80 dark:hover:bg-blue-900/30 rounded-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
                             title={t('restore_history')}
                           >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1150,13 +1156,13 @@ const SalaryCalculator = () => {
                                 hasCanteen: item.hasCanteen,
                               }
                             }}
-                            className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-1.5 hover:bg-blue-50 dark:hover:bg-blue-900/20 rounded"
+                            className="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-2 hover:bg-blue-50/80 dark:hover:bg-blue-900/30 rounded-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
                           >
                             <Eye className="w-4 h-4" />
                           </Link>
                           <button
                             onClick={(e) => deleteHistoryItem(item.id, e)}
-                            className="text-gray-400 hover:text-red-500 dark:hover:text-red-400 p-1.5 hover:bg-red-50 dark:hover:bg-red-900/20 rounded"
+                            className="text-gray-400 hover:text-red-500 dark:hover:text-red-400 p-2 hover:bg-red-50/80 dark:hover:bg-red-900/30 rounded-lg transition-all duration-200 ease-out hover:scale-110 active:scale-95"
                             title={t('delete_history')}
                           >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1204,8 +1210,8 @@ const SalaryCalculator = () => {
         )}
       </div>
 
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-xl shadow-gray-200/50 dark:shadow-black/30">
-        <div className="p-6 space-y-8">
+      <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-2xl shadow-2xl shadow-gray-200/30 dark:shadow-black/50 border border-gray-200/50 dark:border-gray-700/50">
+        <div className="p-6 md:p-8 space-y-8">
           {/* 薪资与工作时间 section */}
           <div className="space-y-6">
             <div>
@@ -1223,7 +1229,7 @@ const SalaryCalculator = () => {
                   placeholder={selectedCountry !== 'CN' ? 
                     `${t('salary_placeholder')} ${getCurrencySymbol(selectedCountry)}` : 
                     t('salary_placeholder_cny')}
-                  className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                 />
               </div>
             </div>
@@ -1243,7 +1249,7 @@ const SalaryCalculator = () => {
                 name="country"
                 value={selectedCountry}
                 onChange={(e) => handleCountryChange(e.target.value)}
-                className="mt-1 block w-full py-2 px-3 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                className="mt-1 block w-full py-3 px-4 border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 rounded-xl shadow-sm focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-base text-gray-900 dark:text-white"
               >
                 {Object.keys(pppFactors).sort((a, b) => {
                   // 确保中国始终排在第一位
@@ -1268,7 +1274,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.workDaysPerWeek}
                   onChange={(e) => handleInputChange('workDaysPerWeek', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
               <div>
@@ -1288,7 +1294,7 @@ const SalaryCalculator = () => {
                   step="1"
                   value={formData.wfhDaysPerWeek}
                   onChange={(e) => handleInputChange('wfhDaysPerWeek', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
             </div>
@@ -1300,7 +1306,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.annualLeave}
                   onChange={(e) => handleInputChange('annualLeave', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
               <div>
@@ -1309,7 +1315,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.publicHolidays}
                   onChange={(e) => handleInputChange('publicHolidays', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
               <div>
@@ -1318,7 +1324,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.paidSickLeave}
                   onChange={(e) => handleInputChange('paidSickLeave', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
             </div>
@@ -1338,7 +1344,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.workHours}
                   onChange={(e) => handleInputChange('workHours', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
               <div>
@@ -1355,7 +1361,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.commuteHours}
                   onChange={(e) => handleInputChange('commuteHours', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
               <div>
@@ -1364,7 +1370,7 @@ const SalaryCalculator = () => {
                   type="number"
                   value={formData.restTime}
                   onChange={(e) => handleInputChange('restTime', e.target.value)}
-                  className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="mt-1 block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 />
               </div>
             </div>
@@ -1384,7 +1390,7 @@ const SalaryCalculator = () => {
                     <select
                       value={formData.degreeType}
                       onChange={(e) => handleInputChange('degreeType', e.target.value)}
-                      className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                      className="block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                     >
                       <option value="belowBachelor">{t('below_bachelor')}</option>
                       <option value="bachelor">{t('bachelor')}</option>
@@ -1397,7 +1403,7 @@ const SalaryCalculator = () => {
                     <select
                       value={formData.schoolType}
                       onChange={(e) => handleInputChange('schoolType', e.target.value)}
-                      className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                      className="block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                       disabled={formData.degreeType === 'belowBachelor'}
                     >
                       <option value="secondTier">{t('school_second_tier')}</option>
@@ -1423,7 +1429,7 @@ const SalaryCalculator = () => {
                     <select
                       value={formData.bachelorType}
                       onChange={(e) => handleInputChange('bachelorType', e.target.value)}
-                      className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                      className="block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                     >
                       <option value="secondTier">{t('school_second_tier')}</option>
                       <option value="firstTier">{t('school_first_tier_bachelor')}</option>
@@ -1439,7 +1445,7 @@ const SalaryCalculator = () => {
                 <select
                   value={formData.workYears}
                   onChange={(e) => handleInputChange('workYears', e.target.value)}
-                  className="block w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 dark:text-white"
+                  className="block w-full rounded-xl border-2 border-gray-200/60 dark:border-gray-600/60 bg-gray-50/50 dark:bg-gray-800/50 px-4 py-3 text-base focus:outline-none focus:ring-0 focus:border-blue-500/80 dark:focus:border-blue-400/80 transition-all duration-200 ease-out hover:border-gray-300/80 dark:hover:border-gray-500/80 hover:bg-white/80 dark:hover:bg-gray-700/80 text-gray-900 dark:text-white"
                 >
                   <option value="0">{t('fresh_graduate')}</option>
                   <option value="1">{t('years_1_3')}</option>
@@ -1600,7 +1606,7 @@ const SalaryCalculator = () => {
       </div>
 
       {/* 结果卡片优化 */}
-      <div ref={shareResultsRef} className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-inner">
+      <div ref={shareResultsRef} className="bg-gradient-to-br from-blue-50/50 via-white/80 to-purple-50/50 dark:from-gray-800/80 dark:via-gray-900/80 dark:to-blue-900/30 rounded-2xl p-6 md:p-8 shadow-2xl shadow-blue-200/20 dark:shadow-black/40 border border-blue-100/50 dark:border-gray-700/50 backdrop-blur-sm">
         <div className="grid grid-cols-3 gap-8">
           <div>
             <div className="text-sm font-medium text-gray-500 dark:text-gray-400">{t('working_days_per_year')}</div>
@@ -1622,7 +1628,7 @@ const SalaryCalculator = () => {
         </div>
         
         {/* 修改分享按钮为链接到分享页面，并保存到历史 */}
-        <div className="mt-6 flex justify-end">
+        <div className="mt-6 flex justify-center">
           <Link
             href={{
               pathname: '/share',
@@ -1661,9 +1667,9 @@ const SalaryCalculator = () => {
                 hasCanteen: formData.hasCanteen,
               }
             }}
-            className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors
-              ${formData.salary ? 'bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-300 dark:hover:bg-blue-800' : 
-              'bg-gray-100 text-gray-400 cursor-not-allowed dark:bg-gray-800 dark:text-gray-600'}`}
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl text-base font-medium transition-all duration-200 ease-out transform hover:scale-105 active:scale-95
+              ${formData.salary ? 'bg-gradient-to-r from-blue-500/90 to-blue-600/90 text-white hover:from-blue-600 hover:to-blue-700 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 dark:from-blue-600/90 dark:to-blue-700/90 dark:hover:from-blue-700 dark:hover:to-blue-800' : 
+              'bg-gray-200/60 text-gray-400 cursor-not-allowed dark:bg-gray-700/60 dark:text-gray-500'}`}
             onClick={() => formData.salary ? saveToHistory() : null}
           >
             <FileText className="w-4 h-4" />

@@ -52,8 +52,7 @@ export default function RootLayout({
           {children}
         </LanguageProvider>
         <Analytics />
-        <div className="pb-8"></div>
-        <footer className="w-full py-3 border-t bg-white/90 dark:bg-gray-900/80 dark:border-gray-800/50">
+        <footer className="w-full py-6 mt-8 bg-gradient-to-t from-gray-50/80 to-transparent dark:from-gray-900/80 dark:to-transparent border-t border-gray-200/50 dark:border-gray-700/50 backdrop-blur-sm">
           <div className="max-w-4xl mx-auto px-4">
             {/* <div className="flex justify-center items-center gap-6 mb-2">
               <a 
@@ -113,7 +112,7 @@ export default function RootLayout({
               </a>
             </div> */}
             <div className="text-center">
-              <span className="text-[10px] text-gray-400 dark:text-gray-500">by <a href="https://id8.fun/application/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">https://id8.fun/application/</a></span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 font-light">by <a href="https://id8.fun/application/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 ease-out font-medium">id8</a></span>
             </div>
           </div>
         </footer>

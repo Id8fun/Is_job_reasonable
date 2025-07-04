@@ -1130,7 +1130,7 @@ export const countryNames: Record<Language, Record<string, string>> = {
 const translations: Record<Language, Record<string, string>> = {
   zh: {
     // 标题和导航
-    'title': '这b班上得值不值·测算版',
+    'title': '测一下.牛马上B班的性价比',
     'github': 'GitHub',
     'email': 'Email',
     'xiaohongshu': '小红书',
@@ -1252,7 +1252,7 @@ const translations: Record<Language, Record<string, string>> = {
     'share_back_to_calculator': '返回计算器',
     'share_your_job_worth_report': '你的工作性价比报告',
     'share_job_worth_report': '工作性价比报告',
-    'share_custom_made': '由"这b班上得值不值·测算版"精心定制',
+    'share_custom_made': '由"测一下.牛马上B班的性价比"精心定制',
     'share_generating': '生成中...',
     'share_download_report': '下载报告',
     'share_basic_info': '基础信息',
