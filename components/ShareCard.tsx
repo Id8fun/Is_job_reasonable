@@ -687,7 +687,7 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
         {/* 底部信息 - 更小的文字 */}
         <div className="mt-6 md:mt-10 text-center text-gray-500 space-y-0.5 text-xs md:text-sm">
           <div>{t('share_custom_made')}</div>
-          <div>worthjob.zippland.com</div>
+          <div>worthjob.id8.com</div>
         </div>
       </div>
       
@@ -873,7 +873,7 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
                     />
                     <div className="flex flex-col">
                       <div className="text-sm font-medium text-gray-700">{t('share_custom_made')}</div>
-                      <div className="text-sm text-gray-500">worthjob.zippland.com</div>
+                      <div className="text-sm text-gray-500">worthjob.id8.com</div>
                     </div>
                   </div>
                   <img 
@@ -891,4 +891,4 @@ const ShareCard: React.FC<ShareCardProps> = (props) => {
   );
 };
 
-export default ShareCard; 
+export default ShareCard;

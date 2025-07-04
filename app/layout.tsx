@@ -55,7 +55,7 @@ export default function RootLayout({
         <div className="pb-8"></div>
         <footer className="w-full py-3 border-t bg-white/90 dark:bg-gray-900/80 dark:border-gray-800/50">
           <div className="max-w-4xl mx-auto px-4">
-            <div className="flex justify-center items-center gap-6 mb-2">
+            {/* <div className="flex justify-center items-center gap-6 mb-2">
               <a 
                 href="https://offerselect.zippland.com/" 
                 target="_blank"
@@ -111,9 +111,9 @@ export default function RootLayout({
                 </div>
                 <span className="text-xs mt-1.5 text-gray-700 dark:text-gray-300 font-medium">拼豆图纸</span>
               </a>
-            </div>
+            </div> */}
             <div className="text-center">
-              <span className="text-[10px] text-gray-400 dark:text-gray-500">更多实用工具 by zippland.com</span>
+              <span className="text-[10px] text-gray-400 dark:text-gray-500">by <a href="https://id8.fun/application/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">https://id8.fun/application/</a></span>
             </div>
           </div>
         </footer>
