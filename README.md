@@ -55,6 +55,79 @@
 6. View your job worth score and detailed evaluation
 7. Generate a shareable report
 
+### 🛠️ Tech Stack
+
+- **Frontend Framework**: Next.js 15.0.2 (React 19 RC)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 3.4.1
+- **Icons**: Lucide React
+- **Image Generation**: html2canvas, html-to-image
+- **QR Code**: qrcode
+- **Analytics**: Vercel Analytics
+- **Development**: ESLint, PostCSS
+- **Deployment**: Vercel (recommended)
+
+### 📋 Prerequisites
+
+- Node.js 18.0 or higher
+- npm, yarn, or pnpm package manager
+- Modern web browser
+
+### 🚀 Getting Started
+
+#### Local Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/zippland/worth-calculator.git
+   cd worth-calculator
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+#### Production Build
+
+1. **Build the application**
+   ```bash
+   npm run build
+   ```
+
+2. **Start the production server**
+   ```bash
+   npm run start
+   ```
+
+#### Deployment
+
+**Vercel (Recommended)**
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy automatically on every push
+
+**Other Platforms**
+- Netlify: Use `npm run build` and deploy the `out` folder
+- Docker: Create a Dockerfile with Node.js base image
+- Traditional hosting: Build and serve the static files
+
 ### 📊 The Calculation
 
 The job worth score is calculated using a comprehensive formula that accounts for:
@@ -107,6 +180,79 @@ Please make sure to test your changes before submitting a PR.
 6. 查看工作性价比分数和详细评估
 7. 生成可分享的报告
 
+### 🛠️ 技术架构
+
+- **前端框架**: Next.js 15.0.2 (React 19 RC)
+- **开发语言**: TypeScript 5
+- **样式框架**: Tailwind CSS 3.4.1
+- **图标库**: Lucide React
+- **图片生成**: html2canvas, html-to-image
+- **二维码**: qrcode
+- **数据分析**: Vercel Analytics
+- **开发工具**: ESLint, PostCSS
+- **推荐部署**: Vercel
+
+### 📋 环境要求
+
+- Node.js 18.0 或更高版本
+- npm、yarn 或 pnpm 包管理器
+- 现代浏览器
+
+### 🚀 快速开始
+
+#### 本地开发
+
+1. **克隆仓库**
+   ```bash
+   git clone https://github.com/zippland/worth-calculator.git
+   cd worth-calculator
+   ```
+
+2. **安装依赖**
+   ```bash
+   npm install
+   # 或者
+   yarn install
+   # 或者
+   pnpm install
+   ```
+
+3. **启动开发服务器**
+   ```bash
+   npm run dev
+   # 或者
+   yarn dev
+   # 或者
+   pnpm dev
+   ```
+
+4. **打开浏览器**
+   访问 [http://localhost:3000](http://localhost:3000)
+
+#### 生产构建
+
+1. **构建应用**
+   ```bash
+   npm run build
+   ```
+
+2. **启动生产服务器**
+   ```bash
+   npm run start
+   ```
+
+#### 部署方式
+
+**Vercel（推荐）**
+1. 将代码推送到 GitHub
+2. 连接仓库到 Vercel
+3. 每次推送自动部署
+
+**其他平台**
+- Netlify: 使用 `npm run build` 并部署 `out` 文件夹
+- Docker: 创建基于 Node.js 的 Dockerfile
+- 传统主机: 构建并提供静态文件服务
+
 ### 📊 计算方法
 
 工作性价比分数使用全面的公式计算，考虑了：
@@ -158,6 +304,79 @@ Please make sure to test your changes before submitting a PR.
 5. 学歴と経験を入力
 6. 仕事の価値スコアと詳細評価を確認
 7. 共有可能なレポートを生成
+
+### 🛠️ 技術スタック
+
+- **フロントエンドフレームワーク**: Next.js 15.0.2 (React 19 RC)
+- **開発言語**: TypeScript 5
+- **スタイリング**: Tailwind CSS 3.4.1
+- **アイコン**: Lucide React
+- **画像生成**: html2canvas, html-to-image
+- **QRコード**: qrcode
+- **アナリティクス**: Vercel Analytics
+- **開発ツール**: ESLint, PostCSS
+- **推奨デプロイ**: Vercel
+
+### 📋 前提条件
+
+- Node.js 18.0 以上
+- npm、yarn、または pnpm パッケージマネージャー
+- モダンなウェブブラウザ
+
+### 🚀 はじめに
+
+#### ローカル開発
+
+1. **リポジトリをクローン**
+   ```bash
+   git clone https://github.com/zippland/worth-calculator.git
+   cd worth-calculator
+   ```
+
+2. **依存関係をインストール**
+   ```bash
+   npm install
+   # または
+   yarn install
+   # または
+   pnpm install
+   ```
+
+3. **開発サーバーを起動**
+   ```bash
+   npm run dev
+   # または
+   yarn dev
+   # または
+   pnpm dev
+   ```
+
+4. **ブラウザを開く**
+   [http://localhost:3000](http://localhost:3000) にアクセス
+
+#### プロダクションビルド
+
+1. **アプリケーションをビルド**
+   ```bash
+   npm run build
+   ```
+
+2. **プロダクションサーバーを起動**
+   ```bash
+   npm run start
+   ```
+
+#### デプロイ方法
+
+**Vercel（推奨）**
+1. コードを GitHub にプッシュ
+2. リポジトリを Vercel に接続
+3. プッシュごとに自動デプロイ
+
+**その他のプラットフォーム**
+- Netlify: `npm run build` を使用して `out` フォルダをデプロイ
+- Docker: Node.js ベースイメージで Dockerfile を作成
+- 従来のホスティング: ビルドして静的ファイルを提供
 
 ### 📊 計算方法
 
