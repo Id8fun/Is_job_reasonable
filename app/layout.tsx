@@ -83,6 +83,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://worthjob.id8.com" />
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
