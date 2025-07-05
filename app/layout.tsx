@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from "next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,8 +17,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Job Worth Calculator",
-    template: "%s | Job Worth Calculator"
+    default: "牛马计算器 - 工作性价比评估工具",
+    template: "%s | 牛马计算器"
   },
   alternates: {
     languages: {
@@ -26,9 +26,47 @@ export const metadata: Metadata = {
       "zh-CN": "/",
     },
   },
-  description: "这b班上得值不值 - 计算你的工作性价比 | Job Worth Calculator - Calculate your job's value",
+  description: "牛马计算器 - 专业的工作性价比评估工具，综合分析薪资、工时、通勤、工作环境等因素，帮你科学评估工作价值，告别盲目打工！",
+  keywords: ["牛马计算器", "工作性价比", "薪资计算器", "工作评估", "职场工具", "工作价值评估", "薪资分析"],
+  authors: [{ name: "id8" }],
+  creator: "id8",
+  publisher: "id8",
   verification: {
     google: "_OQGiIpYz87USAsgJV2C07-JJhQ8myV_4GoM1kDjFic",
+  },
+  openGraph: {
+    title: "牛马计算器 - 工作性价比评估工具",
+    description: "专业的工作性价比评估工具，综合分析薪资、工时、通勤、工作环境等因素，科学评估工作价值",
+    url: "https://worthjob.id8.com",
+    siteName: "牛马计算器",
+    images: [
+      {
+        url: "/website.png",
+        width: 1200,
+        height: 630,
+        alt: "牛马计算器 - 工作性价比评估工具",
+      },
+    ],
+    locale: "zh_CN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "牛马计算器 - 工作性价比评估工具",
+    description: "专业的工作性价比评估工具，综合分析薪资、工时、通勤、工作环境等因素，科学评估工作价值",
+    images: ["/website.png"],
+    creator: "@id8fun",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -42,6 +80,47 @@ export default function RootLayout({
       <head>
         <meta name="google-site-verification" content="_OQGiIpYz87USAsgJV2C07-JJhQ8myV_4GoM1kDjFic" />
         <meta name="baidu-site-verification" content="codeva-pEoMg5F0Cv" />
+        <link rel="canonical" href="https://worthjob.id8.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "牛马计算器",
+              "description": "专业的工作性价比评估工具，综合分析薪资、工时、通勤、工作环境等因素，科学评估工作价值",
+              "url": "https://worthjob.id8.com",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web Browser",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "CNY"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "id8",
+                "url": "https://id8.fun"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "id8",
+                "url": "https://id8.fun"
+              },
+              "inLanguage": ["zh-CN", "en-US"],
+              "featureList": [
+                "工作性价比计算",
+                "薪资分析",
+                "工时评估",
+                "通勤成本计算",
+                "工作环境评价",
+                "个人因素定制",
+                "详细报告生成",
+                "多语言支持"
+              ]
+            })
+          }}
+        />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8196371508613271" crossOrigin="anonymous"></script>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
       </head>
