@@ -79,7 +79,7 @@
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Id8fun/Is-_job_reasonable.git
+   git clone https://github.com/Id8fun/Is_job_reasonable.git
    cd Is-_job_reasonable
    ```
 
@@ -141,7 +141,7 @@ The job worth score is calculated using a comprehensive formula that accounts fo
 
 Contributions are welcome! Here's how you can help:
 
-- [Open an issue](https://github.com/Id8fun/Is-_job_reasonable/issues/new) if you have suggestions or find a bug
+- [Open an issue](https://github.com/Id8fun/Is_job_reasonable/issues/new) if you have suggestions or find a bug
 - Fork the repository and submit a PR for new features or bug fixes
 - Improve documentation or translations
 
@@ -204,7 +204,7 @@ Please make sure to test your changes before submitting a PR.
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/Id8fun/Is-_job_reasonable.git
+   git clone https://github.com/Id8fun/Is_job_reasonable.git
    cd Is-_job_reasonable
    ```
 
@@ -370,7 +370,7 @@ Please make sure to test your changes before submitting a PR.
 
 欢迎参与贡献！以下是您可以提供帮助的方式：
 
-- 如有建议或发现错误，请[提交问题](https://github.com/Id8fun/Is-_job_reasonable/issues/new)
+- 如有建议或发现错误，请[提交问题](https://github.com/Id8fun/Is_job_reasonable/issues/new)
 - 分叉仓库并提交PR，增加新功能或修复bug
 - 改进文档或翻译
 
@@ -433,7 +433,7 @@ Please make sure to test your changes before submitting a PR.
 
 1. **リポジトリをクローン**
    ```bash
-   git clone https://github.com/Id8fun/Is-_job_reasonable.git
+   git clone https://github.com/Id8fun/Is_job_reasonable.git
    cd Is-_job_reasonable
    ```
 
@@ -495,7 +495,7 @@ Please make sure to test your changes before submitting a PR.
 
 貢献は大歓迎です！以下の方法でご協力いただけます：
 
-- 提案やバグを発見した場合は[問題を報告](https://github.com/Id8fun/Is-_job_reasonable/issues/new)してください
+- 提案やバグを発見した場合は[問題を報告](https://github.com/Id8fun/Is_job_reasonable/issues/new)してください
 - リポジトリをフォークし、新機能やバグ修正のためのPRを提出
 - ドキュメントや翻訳の改善
 
