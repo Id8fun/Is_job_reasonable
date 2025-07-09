@@ -2,6 +2,10 @@
   "name": "worth-calculator",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Id8fun/Is_job_reasonable.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
